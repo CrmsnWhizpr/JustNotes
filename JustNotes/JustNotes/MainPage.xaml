@@ -4,21 +4,42 @@
              x:Class="JustNotes.MainPage">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        <Frame BackgroundColor="#2196F3" Padding="24" Margin="40" CornerRadius="10">
+            <Label Text="JustNotes" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="Make changes to your XAML file and save to see your UI update in the running app with XAML Hot Reload. Give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Learn more at "/>
-                        <Span Text="https://aka.ms/xamarin-quickstart" FontAttributes="Bold"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
+
+        <StackLayout>
+            <Grid BackgroundColor="#2196F3" Margin="20" Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Label x:Name="UsernameEntry" Text="Username" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" FontSize="Large" HorizontalTextAlignment="Center"/>
+                
+                <Entry Placeholder="Enter your username" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4"/>
+
+                <Label Text="Password" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="2" FontSize="Large" HorizontalTextAlignment="Center"/>
+
+                <Entry x:Name="PasswordEntry" IsPassword="True" Placeholder="Enter your password" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"/>
+
+                <Button x:Name="ShowHideButton" Text="SHOW" Grid.Column="3" Grid.Row="3" FontSize="Medium"/>
+            </Grid>
+
+            <Button x:Name="LogInButton" Text="Log In" FontSize="Large" Margin="20,40" CornerRadius="10"/>
+
+            <Button x:Name="RegisterButton" Text="Register" FontSize="Large" Margin="20,40" CornerRadius="10"/>
+        </StackLayout>
+        
+        
     </StackLayout>
+    
 
 </ContentPage>
